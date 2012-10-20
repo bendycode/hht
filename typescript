@@ -1,0 +1,673 @@
+Script started on Mon Feb 22 19:53:59 2010
+[quinn@qbook ~/ror/mari]$ scritp[K[Kpt/generate migration UpdateVenuesForMappint[Kg
+      exists  db/migrate
+      create  db/migrate/20100223035423_update_venues_for_mapping.rb
+[quinn@qbook ~/ror/mari]$ sc
+bash: sc: command not found
+[quinn@qbook ~/ror/mari]$ 
+[quinn@qbook ~/ror/mari]$ ls
+README		config		lib		script		typescript
+Rakefile	db		log		test		vendor
+app		doc		public		tmp
+[quinn@qbook ~/ror/mari]$ sc
+bash: sc: command not found
+[quinn@qbook ~/ror/mari]$ ss
+bash: ss: command not found
+[quinn@qbook ~/ror/mari]$ script/server
+=> Booting Mongrel
+=> Rails 2.3.5 application starting on http://0.0.0.0:3000
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:08:54) [GET]
+  [4;36;1mVenue Load (1.0ms)[0m   [0;1mSELECT * FROM "venues" [0m
+
+ActionView::TemplateError (undefined local variable or method `venue' for #<ActionView::Base:0x102ff9fa8>) on line #3 of app/views/home/_venue_detail.html.haml:
+1: .smallbox
+2:   .right.box
+3:     %iframe{:width=>"200", :height=>"200", :frameborder=>"0", :scrolling=>"no", :marginheight=>"0", :marginwidth=>"0", :src=>"http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=#{venue.address1},+#{venue.city},+#{venue.zip}&amp;output=embed&t=m&om=1&iwloc=0&z=15"}
+4:   .left.box
+5:     %p
+6:       %h3
+
+    app/views/home/_venue_detail.html.haml:3:in `_run_haml_app47views47home47_venue_detail46html46haml_locals_object_venue_detail'
+    haml (2.2.15) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/home_controller.rb:23:in `map'
+    app/controllers/home_controller.rb:22:in `each'
+    app/controllers/home_controller.rb:22:in `map'
+    haml (2.2.15) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (43.8ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:09:11) [GET]
+  [4;35;1mVenue Load (1.0ms)[0m   [0mSELECT * FROM "venues" [0m
+Rendered home/_venue_detail (4.5ms)
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/home_controller.rb:23:in `map'
+  app/controllers/home_controller.rb:22:in `each'
+  app/controllers/home_controller.rb:22:in `map'
+  haml (2.2.15) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (33.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:10:26) [GET]
+  [4;36;1mVenue Load (1.0ms)[0m   [0;1mSELECT * FROM "venues" [0m
+
+ArgumentError (wrong number of arguments (2 for 1)):
+  app/controllers/home_controller.rb:23:in `render_to_string'
+  app/controllers/home_controller.rb:23:in `map'
+  app/controllers/home_controller.rb:22:in `each'
+  app/controllers/home_controller.rb:22:in `map'
+  haml (2.2.15) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (30.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:12:18) [GET]
+  [4;35;1mVenue Load (0.9ms)[0m   [0mSELECT * FROM "venues" [0m
+
+ArgumentError (wrong number of arguments (2 for 1)):
+  app/controllers/home_controller.rb:23:in `render_to_string'
+  app/controllers/home_controller.rb:23:in `map'
+  app/controllers/home_controller.rb:22:in `each'
+  app/controllers/home_controller.rb:22:in `map'
+  haml (2.2.15) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (28.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#welcome (for 127.0.0.1 at 2010-02-22 20:13:25) [GET]
+  [4;36;1mVenue Load (1.1ms)[0m   [0;1mSELECT * FROM "venues" ORDER BY created_at DESC LIMIT 5 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering home/welcome
+Rendered home/_venue_detail (4.7ms)
+Rendered home/_venue_detail (1.1ms)
+Rendered home/_venue_detail (0.5ms)
+Rendered home/_venue_detail (0.5ms)
+Completed in 148ms (View: 142, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:13:31) [GET]
+  [4;35;1mVenue Load (1.1ms)[0m   [0mSELECT * FROM "venues" [0m
+Rendered home/_venue_detail (0.8ms)
+Rendered home/_venue_detail (0.6ms)
+Rendered home/_venue_detail (1.1ms)
+Rendered home/_venue_detail (0.8ms)
+Rendering template within layouts/application
+Rendering home/map
+Completed in 26ms (View: 5, DB: 0) | 200 OK [http://localhost/home/map]
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:14:50) [GET]
+  [4;36;1mVenue Load (1.0ms)[0m   [0;1mSELECT * FROM "venues" [0m
+Rendered home/_venue_detail_for_popup (4.3ms)
+Rendered home/_venue_detail_for_popup (0.3ms)
+Rendered home/_venue_detail_for_popup (0.9ms)
+Rendered home/_venue_detail_for_popup (0.3ms)
+Rendering template within layouts/application
+Rendering home/map
+Completed in 25ms (View: 2, DB: 0) | 200 OK [http://localhost/home/map]
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:15:26) [GET]
+  [4;35;1mVenue Load (1.0ms)[0m   [0mSELECT * FROM "venues" [0m
+Rendered home/_venue_detail_for_popup (4.1ms)
+Rendered home/_venue_detail_for_popup (0.3ms)
+Rendered home/_venue_detail_for_popup (0.9ms)
+Rendered home/_venue_detail_for_popup (0.3ms)
+Rendering template within layouts/application
+Rendering home/map
+Completed in 24ms (View: 1, DB: 0) | 200 OK [http://localhost/home/map]
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:15:33) [GET]
+  [4;36;1mVenue Load (0.9ms)[0m   [0;1mSELECT * FROM "venues" [0m
+Rendered home/_venue_detail_for_popup (3.9ms)
+Rendered home/_venue_detail_for_popup (0.3ms)
+Rendered home/_venue_detail_for_popup (0.8ms)
+Rendered home/_venue_detail_for_popup (0.3ms)
+Rendering template within layouts/application
+Rendering home/map
+Completed in 24ms (View: 1, DB: 0) | 200 OK [http://localhost/home/map]
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:16:00) [GET]
+  [4;35;1mVenue Load (1.2ms)[0m   [0mSELECT * FROM "venues" [0m
+Rendered home/_venue_detail_for_popup (4.0ms)
+Rendered home/_venue_detail_for_popup (0.3ms)
+Rendered home/_venue_detail_for_popup (0.8ms)
+Rendered home/_venue_detail_for_popup (0.3ms)
+Rendering template within layouts/application
+Rendering home/map
+Completed in 25ms (View: 1, DB: 0) | 200 OK [http://localhost/home/map]
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:17:18) [GET]
+  [4;36;1mVenue Load (1.0ms)[0m   [0;1mSELECT * FROM "venues" [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (92.8ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (0.9ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (1.5ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (1.0ms)
+Rendering template within layouts/application
+Rendering home/map
+Completed in 116ms (View: 1, DB: 0) | 200 OK [http://localhost/home/map]
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:17:45) [GET]
+  [4;35;1mVenue Load (0.9ms)[0m   [0mSELECT * FROM "venues" [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (5.2ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (1.0ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (1.3ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (1.9ms)
+Rendering template within layouts/application
+Rendering home/map
+Completed in 29ms (View: 1, DB: 0) | 200 OK [http://localhost/home/map]
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:18:03) [GET]
+  [4;36;1mVenue Load (1.0ms)[0m   [0;1mSELECT * FROM "venues" [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (5.3ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (1.0ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (1.1ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (1.1ms)
+Rendering template within layouts/application
+Rendering home/map
+Completed in 27ms (View: 1, DB: 0) | 200 OK [http://localhost/home/map]
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:18:28) [GET]
+  [4;35;1mVenue Load (1.0ms)[0m   [0mSELECT * FROM "venues" [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (5.7ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (1.4ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (1.3ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (1.1ms)
+Rendering template within layouts/application
+Rendering home/map
+Completed in 95ms (View: 68, DB: 0) | 200 OK [http://localhost/home/map]
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:20:07) [GET]
+  [4;36;1mVenue Load (1.0ms)[0m   [0;1mSELECT * FROM "venues" [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:23)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:26)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:29)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:32)
+Rendered home/_venue_detail_for_popup (5.4ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:23)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:26)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:29)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:32)
+Rendered home/_venue_detail_for_popup (1.3ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:23)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:26)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:29)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:32)
+Rendered home/_venue_detail_for_popup (1.5ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:23)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:26)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:29)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:32)
+Rendered home/_venue_detail_for_popup (1.2ms)
+Rendering template within layouts/application
+Rendering home/map
+Completed in 28ms (View: 1, DB: 0) | 200 OK [http://localhost/home/map]
+
+
+Processing HomeController#detail (for 127.0.0.1 at 2010-02-22 20:20:11) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionController::UnknownAction (No action responded to detail. Actions: map and welcome):
+  haml (2.2.15) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#detail (for 127.0.0.1 at 2010-02-22 20:21:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVenue Load (0.3ms)[0m   [0mSELECT * FROM "venues" WHERE ("venues"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering home/detail
+Rendered home/_venue_detail (2.6ms)
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/home/detail/1]
+
+
+Processing HomeController#detail (for 127.0.0.1 at 2010-02-22 20:22:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVenue Load (0.3ms)[0m   [0;1mSELECT * FROM "venues" WHERE ("venues"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering home/detail
+
+ActionView::TemplateError (Inconsistent indentation: 2 spaces were used for indentation, but the rest of the document was indented using 4 spaces.) on line #4 of app/views/home/_venue_detail.html.haml:
+1: .right
+2:     %iframe{:width=>"400", :height=>"400", :frameborder=>"0", :scrolling=>"no", :marginheight=>"0", :marginwidth=>"0", :src=>"http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=#{venue.address1},+#{venue.city},+#{venue.zip}&amp;output=embed&t=m&om=1&iwloc=0&z=15"}
+3: .left
+4:   %p
+5:     %h3
+6:       =venue.name.titleize
+7:     ="(#{venue.venue_type})"
+
+    app/views/home/_venue_detail.html.haml:4
+    haml (2.2.15) lib/haml/precompiler.rb:150:in `tabs'
+    haml (2.2.15) lib/haml/precompiler.rb:132:in `instance_eval'
+    haml (2.2.15) lib/haml/precompiler.rb:132:in `tabs'
+    haml (2.2.15) lib/haml/precompiler.rb:988:in `block_opened?'
+    haml (2.2.15) lib/haml/precompiler.rb:739:in `render_tag'
+    haml (2.2.15) lib/haml/precompiler.rb:805:in `render_div'
+    haml (2.2.15) lib/haml/precompiler.rb:209:in `process_line'
+    haml (2.2.15) lib/haml/precompiler.rb:177:in `precompile'
+    haml (2.2.15) lib/haml/engine.rb:114:in `initialize'
+    haml (2.2.15) lib/haml/template/plugin.rb:21:in `new'
+    haml (2.2.15) lib/haml/template/plugin.rb:21:in `compile'
+    haml (2.2.15) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    haml (2.2.15) lib/haml/helpers.rb:96:in `non_haml'
+    haml (2.2.15) lib/haml/helpers/action_view_mods.rb:11:in `render'
+    app/views/home/detail.html.haml:1:in `_run_haml_app47views47home47detail46html46haml'
+    haml (2.2.15) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.15) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.15) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (50.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#detail (for 127.0.0.1 at 2010-02-22 20:22:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVenue Load (0.3ms)[0m   [0mSELECT * FROM "venues" WHERE ("venues"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering home/detail
+Rendered home/_venue_detail (6.8ms)
+Completed in 19ms (View: 12, DB: 0) | 200 OK [http://localhost/home/detail/1]
+
+
+Processing HomeController#detail (for 127.0.0.1 at 2010-02-22 20:22:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mVenue Load (0.3ms)[0m   [0;1mSELECT * FROM "venues" WHERE ("venues"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering home/detail
+Rendered home/_venue_detail (7.1ms)
+Completed in 19ms (View: 12, DB: 0) | 200 OK [http://localhost/home/detail/1]
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:24:03) [GET]
+  [4;35;1mVenue Load (1.0ms)[0m   [0mSELECT * FROM "venues" [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:23)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:26)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:29)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:32)
+Rendered home/_venue_detail_for_popup (1.6ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:23)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:26)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:29)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:32)
+Rendered home/_venue_detail_for_popup (1.3ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:23)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:26)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:29)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:32)
+Rendered home/_venue_detail_for_popup (1.5ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:23)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:26)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:29)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:32)
+Rendered home/_venue_detail_for_popup (1.3ms)
+Rendering template within layouts/application
+Rendering home/map
+Completed in 20ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:24:38) [GET]
+  [4;36;1mVenue Load (1.0ms)[0m   [0;1mSELECT * FROM "venues" [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:23)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:26)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:29)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:32)
+Rendered home/_venue_detail_for_popup (6.3ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:23)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:26)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:29)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:32)
+Rendered home/_venue_detail_for_popup (1.2ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:23)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:26)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:29)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:32)
+Rendered home/_venue_detail_for_popup (1.5ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:23)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:26)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:29)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:32)
+Rendered home/_venue_detail_for_popup (1.3ms)
+Rendering template within layouts/application
+Rendering home/map
+Completed in 30ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:24:56) [GET]
+  [4;35;1mVenue Load (1.0ms)[0m   [0mSELECT * FROM "venues" [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:23)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:26)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:29)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:32)
+Rendered home/_venue_detail_for_popup (5.3ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:23)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:26)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:29)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:32)
+Rendered home/_venue_detail_for_popup (1.2ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:23)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:26)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:29)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:32)
+Rendered home/_venue_detail_for_popup (65.7ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:23)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:26)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:29)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:32)
+Rendered home/_venue_detail_for_popup (1.7ms)
+Rendering template within layouts/application
+Rendering home/map
+Completed in 93ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:25:14) [GET]
+  [4;36;1mVenue Load (1.0ms)[0m   [0;1mSELECT * FROM "venues" [0m
+
+ActionView::TemplateError (The line was indented 2 levels deeper than the previous line.) on line #4 of app/views/home/_venue_detail_for_popup.haml:
+1: %table{:width=> '100%'}
+2:   %tr
+3:     %td{:valign=> 'top'}
+4:         %h3
+5:           =venue.name.titleize
+6:         ="(#{venue.venue_type})"
+7:         %br
+
+    app/views/home/_venue_detail_for_popup.haml:4
+    haml (2.2.15) lib/haml/precompiler.rb:180:in `precompile'
+    haml (2.2.15) lib/haml/engine.rb:114:in `initialize'
+    haml (2.2.15) lib/haml/template/plugin.rb:21:in `new'
+    haml (2.2.15) lib/haml/template/plugin.rb:21:in `compile'
+    haml (2.2.15) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/home_controller.rb:26:in `map'
+    app/controllers/home_controller.rb:25:in `each'
+    app/controllers/home_controller.rb:25:in `map'
+    haml (2.2.15) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (43.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:25:19) [GET]
+  [4;35;1mVenue Load (1.0ms)[0m   [0mSELECT * FROM "venues" [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (8.3ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (80.3ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (1.5ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (1.2ms)
+Rendering template within layouts/application
+Rendering home/map
+Completed in 112ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:25:32) [GET]
+  [4;36;1mVenue Load (1.3ms)[0m   [0;1mSELECT * FROM "venues" [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (5.1ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (1.2ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (1.5ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:30)
+Rendered home/_venue_detail_for_popup (1.2ms)
+Rendering template within layouts/application
+Rendering home/map
+Completed in 28ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:26:09) [GET]
+  [4;35;1mVenue Load (0.9ms)[0m   [0mSELECT * FROM "venues" [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+Rendered home/_venue_detail_for_popup (4.0ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+Rendered home/_venue_detail_for_popup (0.7ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+Rendered home/_venue_detail_for_popup (0.7ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+Rendered home/_venue_detail_for_popup (0.7ms)
+Rendering template within layouts/application
+Rendering home/map
+Completed in 24ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:26:39) [GET]
+  [4;36;1mVenue Load (1.0ms)[0m   [0;1mSELECT * FROM "venues" [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+Rendered home/_venue_detail_for_popup (4.4ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+Rendered home/_venue_detail_for_popup (0.8ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+Rendered home/_venue_detail_for_popup (0.9ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+Rendered home/_venue_detail_for_popup (1.0ms)
+Rendering template within layouts/application
+Rendering home/map
+Completed in 91ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#detail (for 127.0.0.1 at 2010-02-22 20:26:44) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mVenue Load (0.3ms)[0m   [0mSELECT * FROM "venues" WHERE ("venues"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering home/detail
+Rendered home/_venue_detail (6.6ms)
+Completed in 18ms (View: 11, DB: 0) | 200 OK [http://localhost/home/detail/2]
+
+
+Processing HomeController#detail (for 127.0.0.1 at 2010-02-22 20:27:01) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mVenue Load (0.3ms)[0m   [0;1mSELECT * FROM "venues" WHERE ("venues"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering home/detail
+Rendered home/_venue_detail (2.7ms)
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/home/detail/2]
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:27:04) [GET]
+  [4;35;1mVenue Load (0.9ms)[0m   [0mSELECT * FROM "venues" [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+Rendered home/_venue_detail_for_popup (4.1ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+Rendered home/_venue_detail_for_popup (0.9ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+Rendered home/_venue_detail_for_popup (0.8ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+Rendered home/_venue_detail_for_popup (0.8ms)
+Rendering template within layouts/application
+Rendering home/map
+Completed in 23ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#detail (for 127.0.0.1 at 2010-02-22 20:27:08) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mVenue Load (0.4ms)[0m   [0;1mSELECT * FROM "venues" WHERE ("venues"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering home/detail
+Rendered home/_venue_detail (3.6ms)
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/home/detail/3]
+
+
+Processing HomeController#detail (for 127.0.0.1 at 2010-02-22 20:27:32) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mVenue Load (0.5ms)[0m   [0mSELECT * FROM "venues" WHERE ("venues"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering home/detail
+Rendered home/_venue_detail (7.5ms)
+Completed in 88ms (View: 13, DB: 0) | 200 OK [http://localhost/home/detail/3]
+
+
+Processing HomeController#detail (for 127.0.0.1 at 2010-02-22 20:27:40) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mVenue Load (0.3ms)[0m   [0;1mSELECT * FROM "venues" WHERE ("venues"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering home/detail
+Rendered home/_venue_detail (7.0ms)
+Completed in 19ms (View: 12, DB: 0) | 200 OK [http://localhost/home/detail/3]
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:28:03) [GET]
+  [4;35;1mVenue Load (1.0ms)[0m   [0mSELECT * FROM "venues" [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+Rendered home/_venue_detail_for_popup (1.4ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+Rendered home/_venue_detail_for_popup (0.8ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+Rendered home/_venue_detail_for_popup (0.8ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+Rendered home/_venue_detail_for_popup (0.9ms)
+Rendering template within layouts/application
+Rendering home/map
+Completed in 18ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#detail (for 127.0.0.1 at 2010-02-22 20:28:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mVenue Load (0.3ms)[0m   [0;1mSELECT * FROM "venues" WHERE ("venues"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering home/detail
+Rendered home/_venue_detail (2.6ms)
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/home/detail/2]
+
+
+Processing HomeController#map (for 127.0.0.1 at 2010-02-22 20:28:11) [GET]
+  [4;35;1mVenue Load (0.9ms)[0m   [0mSELECT * FROM "venues" [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+Rendered home/_venue_detail_for_popup (1.2ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+Rendered home/_venue_detail_for_popup (0.8ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+Rendered home/_venue_detail_for_popup (0.8ms)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:21)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_haml_app47views47home47_venue_detail_for_popup46haml_locals_object_venue_venue_detail_for_popup at /Users/quinn/RoR/mari/app/views/home/_venue_detail_for_popup.haml:24)
+Rendered home/_venue_detail_for_popup (1.0ms)
+Rendering template within layouts/application
+Rendering home/map
+Completed in 18ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+^CExiting
+[quinn@qbook ~/ror/mari]$ vim .gems
+7[?47h[?1h=[1;24r[m[H[2J[24;1H".gems" ".gems" 2L, 15C[>c[1;1Hwill_paginate
+
+[1m[34m~                                                                               [4;1H~                                                                               [5;1H~                                                                               [6;1H~                                                                               [7;1H~                                                                               [8;1H~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [1;1H
+[1;13H[m[24;1H[1m-- INSERT --[m[24;13H[K[2;23r[2;1H[L[1;24r[24;1H[1m-- INSERT --[2;1H[mk[2;1H[K[2;1Hggo[2;2H[K[2;2HgeeookkiittZZZ[2;8H[K[2;8H[2;7H[K[2;7H[24;1H[K[2;6H[24;1H".gems" ".gems" 3L, 22C written
+[?1l>[2J[?47l8[quinn@qbook ~/ror/mari]$ hopu[K[K[Kpush
+bash: hpush: command not found
+[quinn@qbook ~/ror/mari]$ exit
+exit
+
+Script done on Mon Feb 22 20:29:45 2010

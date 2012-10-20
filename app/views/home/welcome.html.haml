@@ -1,0 +1,14 @@
+
+=will_paginate @venues
+- @venues.each do |venue|
+  = render :partial => 'venue_detail', :locals => {:venue => venue}
+
+=will_paginate @venues
+
+/ t.text     "description"
+/ t.string   "discount"
+/ t.text     "bike_tips"
+/ t.string   "restrictions"
+/ t.datetime "created_at"
+/ t.datetime "updated_at"
+/ t.string   "url"

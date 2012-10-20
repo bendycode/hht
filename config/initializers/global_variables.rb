@@ -1,0 +1,1 @@
+VENUE_TYPES = [['Hotels/All Lodging','Hotels/All Lodging'],['Entertainment venues','Entertainment venues'],['Educational attractions','Educational attractions'],['Restaurants/all dining','Restaurants/all dining']]

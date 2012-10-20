@@ -1,0 +1,34 @@
+.right
+  %iframe{:width=>"300", :height=>"300", :frameborder=>"0", :scrolling=>"no", :marginheight=>"0", :marginwidth=>"0", :src=>"http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=#{venue.address1},+#{venue.city},+#{venue.zip}&amp;output=embed&t=m&om=1&iwloc=0&z=15"}
+.left
+  =link_to "Back to Map View", root_path
+  %p
+    %h3
+      =venue.name.titleize
+    ="(#{venue.venue_type})"
+    %br
+    =venue.address1
+    -unless venue.address2.blank?
+      %br
+      =venue.address2
+    ="#{venue.city.titleize}, #{venue.state}, #{venue.zip}"
+    %br
+    =link_to "View Larger Map", "http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=#{venue.address1},+#{venue.city},+#{venue.zip}", :target => "_blank"
+    %br
+    =venue.phone
+    %br
+    =link_to venue.url, venue.url, :target => "_blank"
+.clear
+%p
+  %b Discount: 
+  =simple_format venue.discount
+%p
+  %b Restrictions: 
+  =simple_format venue.restrictions
+%p
+  %b Description:
+  =simple_format venue.description
+%p
+  %b Bike Tips:
+  =simple_format venue.bike_tips
+

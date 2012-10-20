@@ -1,0 +1,26 @@
+%table{:width=> '100%', :height=> '100%'}
+  %tr
+    %td{:valign=> 'top'}
+      %b
+        =venue.name.titleize
+      ="(#{venue.venue_type})"
+      %br
+      =venue.address1
+      -unless venue.address2.blank?
+        %br
+        =venue.address2
+      ="#{venue.city.titleize}, #{venue.state}, #{venue.zip}"
+      %br
+      =venue.phone
+      %br
+      =link_to venue.url, venue.url, :target => "_blank"
+      %p
+      =link_to "CLICK FOR FULL DETAILS", :controller=> 'home', :action => 'detail', :id => venue.id
+    %td{:valign=> 'top'}
+      %b Discount: 
+      =truncate(venue.discount,100,"...MORE...")
+      %p
+        %b Restrictions: 
+        =truncate(venue.restrictions,100,'...MORE...')      
+      %p
+        =link_to "CLICK FOR FULL DETAILS", :controller=> 'home', :action => 'detail', :id => venue.id

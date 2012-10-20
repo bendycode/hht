@@ -1,0 +1,67 @@
+<% form_for(@venue) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :venue_type %><br />
+    <%= f.select :venue_type, VENUE_TYPES %>
+  </p>
+    <p>
+    <%= f.label :venue_type_detail %><br />
+    <%= f.select :venue_type_detail, VenueTypeDetail.all.collect(&:detail) %>
+  </p>
+  <p>
+    <%= f.label :address1 %><br />
+    <%= f.text_field :address1 %>
+  </p>
+  <p>
+    <%= f.label :address2 %><br />
+    <%= f.text_field :address2 %>
+  </p>
+  <p>
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </p>
+  <p>
+    <%= f.label :zip %><br />
+    <%= f.text_field :zip %>
+  </p>
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+    <p>
+    <%= f.label :alcohol, "Alcohol?" %><br />
+    <%= f.check_box :alcohol %>
+  </p>
+  <p>
+    <%= f.label :discount %><br />
+    <%= f.text_field :discount %>
+  </p>
+  <p>
+    <%= f.label :bike_tips %><br />
+    <%= f.text_area :bike_tips %>
+  </p>
+  <p>
+    <%= f.label :restrictions %><br />
+    <%= f.text_field :restrictions %>
+  </p>
+  <p>
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>

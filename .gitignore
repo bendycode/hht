@@ -1,0 +1,11 @@
+*.~lock*
+.DS_Store
+.bundle
+.sass-cache/
+config/credentials.yml
+config/database.yml
+db/*.sqlite3
+log/*.log
+tmp/
+vendor/plugins
+~*

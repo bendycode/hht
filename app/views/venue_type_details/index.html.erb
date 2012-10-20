@@ -1,0 +1,20 @@
+<h1>Listing venue_type_details</h1>
+
+<table>
+  <tr>
+    <th>Detail</th>
+  </tr>
+
+<% @venue_type_details.each do |venue_type_detail| %>
+  <tr>
+    <td><%=h venue_type_detail.detail %></td>
+    <td><%= link_to 'Show', venue_type_detail %></td>
+    <td><%= link_to 'Edit', edit_venue_type_detail_path(venue_type_detail) %></td>
+    <td><%= link_to 'Destroy', venue_type_detail, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New venue_type_detail', new_venue_type_detail_path %>
