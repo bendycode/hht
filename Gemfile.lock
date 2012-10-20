@@ -11,8 +11,12 @@ GEM
     activeresource (2.3.5)
       activesupport (= 2.3.5)
     activesupport (2.3.5)
-    geokit (1.6.0)
+    geokit (1.6.5)
+      multi_json
+    geokit-rails (1.1.4)
+      geokit (>= 1.5.0)
     haml (3.1.2)
+    multi_json (1.3.6)
     mysql (2.7)
     rack (1.0.1)
     rails (2.3.5)
@@ -31,6 +35,7 @@ PLATFORMS
 
 DEPENDENCIES
   geokit
+  geokit-rails
   haml
   mysql
   rails (= 2.3.5)
