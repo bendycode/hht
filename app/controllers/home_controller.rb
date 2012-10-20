@@ -7,13 +7,11 @@ class HomeController < ApplicationController
     @venue = Venue.find params[:id]
   end
   def map
-
     @map = GMap.new("map_div")
     @map.control_init(:large_map => true,:map_type => true)
     @map.center_zoom_init([35.12313,-110.567],12)  
     @map.overlay_init GMarker.new([35.12878, -110.578],:title => "Hello!")
     @map.record_init @map.add_overlay(GMarker.new([35.12878, -110.578],:title => "Hello!"))
-
 
     @venues=  Venue.all
     venue = @venues.first
