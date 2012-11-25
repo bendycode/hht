@@ -17,10 +17,10 @@
       %p
       =link_to "CLICK FOR FULL DETAILS", :controller=> 'home', :action => 'detail', :id => venue.id
     %td{:valign=> 'top'}
-      %b Discount: 
-      =truncate(venue.discount,100,"...MORE...")
+      %b Discount:
+      =truncate(venue.discount, :length => 100, :omission => "...MORE...")
       %p
-        %b Restrictions: 
-        =truncate(venue.restrictions,100,'...MORE...')      
+        %b Restrictions:
+        =truncate(venue.restrictions, :length => 100, :omission => '...MORE...')
       %p
         =link_to "CLICK FOR FULL DETAILS", :controller=> 'home', :action => 'detail', :id => venue.id
