@@ -8,7 +8,9 @@ development:
 test:
   ABQIAAAANEH8BRSu3zQXqhRE3fwyBhQK1DZIj-bbMS2cRyjvEAT1BHQ8rRQFZL0s1hXb287t-amNK3h6cfJ54Q
 staging:
-  AIzaSyAi3UsWx-refOisiweAi75rUbRMPiD9jTs
+  hht-staging.herokuapp.com: AIzaSyAi3UsWx-refOisiweAi75rUbRMPiD9jTs
+  hht.herokuapp.com: AIzaSyAi3UsWx-refOisiweAi75rUbRMPiD9jTs
 production:
-  AIzaSyAi3UsWx-refOisiweAi75rUbRMPiD9jTs
+  hht-staging.herokuapp.com: AIzaSyAi3UsWx-refOisiweAi75rUbRMPiD9jTs
+  hht.herokuapp.com: AIzaSyAi3UsWx-refOisiweAi75rUbRMPiD9jTs
   # ABQIAAAANEH8BRSu3zQXqhRE3fwyBhQK1DZIj-bbMS2cRyjvEAT1BHQ8rRQFZL0s1hXb287t-amNK3h6cfJ54Q

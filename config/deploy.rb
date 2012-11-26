@@ -9,7 +9,7 @@ set :deploy_to, "/var/www/apps/#{application}"
 set :user, "deploy"
 set :password, ""
 set :group, "www-data"
-  
+
 set :deploy_via, :export
 set :repository, "http://svn.vps114.speedyrails.ca/#{application}/trunk"
 set :scm_username, "deploy"
@@ -21,7 +21,7 @@ namespace :deploy do
   task :restart, :roles => :app do
     run "touch #{deploy_to}/#{shared_dir}/tmp/restart.txt"
   end
-  
+
   desc "Install Gem Bundle"
   task :bundle_install, :roles => :app do
     run "sudo bundle install --gemfile #{deploy_to}/current/Gemfile"
@@ -36,5 +36,4 @@ namespace :deploy do
     sudo "rm -rf #{release_path}/tmp"  # technically shouldn't be in svn
     run "ln -nfs #{deploy_to}/#{shared_dir}/tmp #{release_path}/tmp"
   end
-
 end
