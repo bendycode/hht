@@ -3,9 +3,11 @@ class HomeController < ApplicationController
     conditions = []
     @venues = Venue.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 5, :conditions => conditions
   end
+
   def detail
     @venue = Venue.find params[:id]
   end
+
   def map
     @map = GMap.new("map_div")
     @map.control_init(:large_map => true,:map_type => true)

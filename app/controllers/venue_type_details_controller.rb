@@ -1,7 +1,7 @@
 class VenueTypeDetailsController < ApplicationController
-  
+
   before_filter :admin_required
-  
+
   # GET /venue_type_details
   # GET /venue_type_details.xml
   def index

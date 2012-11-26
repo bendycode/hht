@@ -1,9 +1,6 @@
 class VenuesController < ApplicationController
-  # GET /venues
-  # GET /venues.xml
-  
   before_filter :admin_required
-  
+
   def index
     @venues = Venue.all
 
@@ -13,8 +10,6 @@ class VenuesController < ApplicationController
     end
   end
 
-  # GET /venues/1
-  # GET /venues/1.xml
   def show
     @venue = Venue.find(params[:id])
 
@@ -24,8 +19,6 @@ class VenuesController < ApplicationController
     end
   end
 
-  # GET /venues/new
-  # GET /venues/new.xml
   def new
     @venue = Venue.new
 
@@ -35,13 +28,10 @@ class VenuesController < ApplicationController
     end
   end
 
-  # GET /venues/1/edit
   def edit
     @venue = Venue.find(params[:id])
   end
 
-  # POST /venues
-  # POST /venues.xml
   def create
     @venue = Venue.new(params[:venue])
 
@@ -57,8 +47,6 @@ class VenuesController < ApplicationController
     end
   end
 
-  # PUT /venues/1
-  # PUT /venues/1.xml
   def update
     @venue = Venue.find(params[:id])
 
@@ -74,8 +62,6 @@ class VenuesController < ApplicationController
     end
   end
 
-  # DELETE /venues/1
-  # DELETE /venues/1.xml
   def destroy
     @venue = Venue.find(params[:id])
     @venue.destroy
