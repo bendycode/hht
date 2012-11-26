@@ -1,5 +1,7 @@
 source :gemcutter
 
+ruby "1.8.7"
+
 gem "rails", "2.3.14"
 # gem "sqlite3-ruby", :require => "sqlite3"
 # gem 'sqlite3-ruby'
